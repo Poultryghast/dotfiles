@@ -66,7 +66,7 @@ inputs: {
 
             xorg = {
               enable = true;
-              gpu = "amdgpu";
+              gpu = "null";
               xmonad = true;
               xmobar = true;
               dunst = true;
