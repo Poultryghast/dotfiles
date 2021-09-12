@@ -9,75 +9,12 @@ inputs: {
       in
         {
           teletypeOne = {
-
-            terminals = {
-              alacritty = true;
-              termite = false;
-            };
-
-            filemanagers = {
-              gui = false;
-              tui = false;
-            };
-
-            zsh = {
-              enabled = false;
-              ohMy = false;
-            };
-
-            games = {
-              steam = false;
-              minecraft = false;
-            };
-
             pulseaudio.enable = true;
-            pipewire.enable = false;
-
-            fonts = {
-              firaCode = true;
-            };
-
-            communication = {
-              free = false;
-              nonFree = true;
-              bullshit = false;
-            };
-
-            util = {
-              xmonadUtil = true;
-              neofetch = true;
-              music = false;
-              screenshot = false;
-              theming = false;
-              topFamily = false;
-              driveUtil = false;
-              emacs = false;
-              media = false;
-              encoding = false;
-              pulseUtil = true;
-              textUtil = false;
-              office = false;
-              password = false;
-              compilerUtil = false;
-              haskell = false;
-              termUtil = false;
-              painting = false;
-            };
-
             xorg = {
               enable = true;
-              gpu = "null";
               xmonad = true;
               xmobar = true;
-              dunst = true;
-              lightdm = true;
-              libinput = true;
-              flatInput = true;
-            };
-
-            networking  = {
-              bluetooth = false;
-              networkManager = false;
+              sddm = true;
             };
 
             hardware.desktop = true;
