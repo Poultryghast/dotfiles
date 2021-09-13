@@ -3,6 +3,7 @@
 {
   imports = [
     ./programs/rofi.nix
+    ./programs/vscode.nix
   ];
   programs.home-manager.enable = true;
 
@@ -23,8 +24,6 @@
     userDirs = {
       enable = true;
       download = "$HOME/downloads";
-      code = "$HOME/code";
-      save = "$HOME/save";
     };
   };
 }

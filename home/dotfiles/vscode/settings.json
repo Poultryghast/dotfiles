@@ -1,0 +1,18 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.fontSize": 20,
+    "workbench.editor.enablePreview": false,
+    "editor.wordWrap": "on",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "none",
+    "debug.console.closeOnEnd": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.trimTrailingWhitespace": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.colorTheme": "Default High Contrast",
+    "window.restoreFullscreen": true,
+    "window.newWindowDimensions": "maximized",
+    "editor.fontFamily": "Ac437 IBM VGA 8x16",
+    "update.mode": "none"
+}
