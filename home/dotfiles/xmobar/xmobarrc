@@ -1,0 +1,29 @@
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , additionalFonts = []
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "grey"
+       , alpha = 255
+       , position = Top
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."w
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Com "/bin/sh" [ "-c", "~/.config/xmobar/title.sh" ] "title" 10
+                    , Run Com "/bin/sh" [ "-c", "~/.config/xmobar/button.sh" ] "button" 10
+                    , Run Com "/bin/sh" [ "-c", "~/.config/xmobar/next.sh" ] "next" 10
+                    , Run Date "%r" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% \
+                     \} %date% {\
+                     \%title% <action=`playerctl -p vlc play-pause` button=1>%button%</action> <action=`playerctl -p vlc next` button=1>%next%</action>"
+       }

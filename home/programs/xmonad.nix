@@ -10,7 +10,7 @@
         hp.monad-logger
         hp.xmonad-contrib
       ];
-      config = ../dotfiles/config.hs;
+      config = ../dotfiles/xmonad/config.hs;
     };
   };
 }

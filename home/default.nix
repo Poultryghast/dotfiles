@@ -4,6 +4,8 @@
   imports = [
     ./programs/rofi.nix
     ./programs/vscode.nix
+    ./programs/xmobar.nix
+    ./programs/xmonad.nix
   ];
   programs.home-manager.enable = true;
 
