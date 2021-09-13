@@ -1,8 +1,7 @@
 { ... }:
-
 {
   programs.rofi = {
     enable = true;
-    theme = ../dotfiles/rofi/dracula.rasi;
+    theme = ../dotfiles/rofi/theme.rasi;
   };
 }

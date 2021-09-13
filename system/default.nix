@@ -73,16 +73,4 @@
   };
 
   system.stateVersion = "21.05";
-
-  fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [
-
-    ];
-    fontconfig = {
-      defaultFonts = {
-
-      };
-    };
-  };
 }

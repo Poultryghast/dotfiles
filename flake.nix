@@ -25,16 +25,16 @@
             };
           }
           ./system
-          #home-manager.nixosModules.home-manager {
-          #  home-manager = {
-          #    useGlobalPkgs = true;
-          #    useUserPackages = true;
-          #    users.mark = import ./home;
-          #    extraSpecialArgs = {
-          #      inherit inputs;
-          #    };
-          #  };
-          #}
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.henry = import ./home;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
         ];
       };
     };
