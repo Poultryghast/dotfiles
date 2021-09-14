@@ -6,6 +6,7 @@
     ./programs/vscode.nix
     ./programs/xmobar.nix
     ./programs/xmonad.nix
+    ./programs/firefox.nix
   ];
   programs.home-manager.enable = true;
 
