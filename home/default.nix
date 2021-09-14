@@ -12,7 +12,7 @@
   home = {
     username = "henry";
     homeDirectory = "/home/henry";
-    stateVersion = "21.11";
+    stateVersion = "21.05";
     packages = with pkgs; [
       firefox
     ];
