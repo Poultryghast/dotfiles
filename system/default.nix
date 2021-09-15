@@ -4,6 +4,10 @@
     ./hardware-configuration.nix
   ];
 
+  fonts.fonts = [
+    ( pkgs.callPackage ../packages/fonts/oldschool-pc.nix {} )
+  ];
+
   # GRUB with a windows entry
   boot.loader.grub = {
     enable = true;
@@ -61,6 +65,7 @@
       alacritty
       git neovim
       minecraft multimc
+      ( pkgs.callPackage ../packages/games/lunar.nix {} )
     ];
   };
 

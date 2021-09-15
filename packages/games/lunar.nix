@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 let
   version = "2.7.3";
 in pkgs.appimageTools.wrapType1 rec {
