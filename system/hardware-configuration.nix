@@ -15,6 +15,12 @@
     "video=HDMI-A-1:1920x1080@75"
   ];
 
+  boot.supportedFilesystems = [ "ntfs" ];
+  fileSystems."/ext" =
+  { device = "/dev/disk/by-uuid/4CF97C7B5C0B894D";
+    fsType = "ntfs";
+    options = [ "rw" "uid=100" ];
+  };
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/1f4bf4ce-121c-4e47-9b35-2481fe149361";
     fsType = "ext4";
