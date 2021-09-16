@@ -27,6 +27,12 @@
         version = "1.21.7";
         sha256 = "160h8svp78snwq7bl6acbkmsb2664fiznnjqim9lh2bnyrlh69ww";
       }
+      {
+        name = "nix";
+        publisher = "bbenoist";
+        version = "1.0.1";
+        sha256 = "0zd0n9f5z1f0ckzfjr38xw2zzmcxg1gjrava7yahg5cvdcw6l35b";
+      }
     ];
   };
   home.file.".config/Code/User/settings.json".source = ../dotfiles/vscode/settings.json;
