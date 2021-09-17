@@ -25,7 +25,7 @@
 
   users.users.henry = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 
   hardware.pulseaudio.enable = true;
@@ -67,6 +67,9 @@
       minecraft multimc
       ( pkgs.callPackage ../packages/games/lunar.nix {} )
     ];
+    interactiveShellInit = ''
+      alias music='cvlc /home/henry/songs'
+    '';
   };
 
   nix = {
@@ -76,6 +79,8 @@
     '';
     registry.nixpkgs.flake = nixpkgs;
   };
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "21.05";
 }
