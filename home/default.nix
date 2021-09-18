@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./programs/rofi.nix
     ./programs/vscode.nix
     ./programs/xmobar.nix
     ./programs/xmonad.nix
