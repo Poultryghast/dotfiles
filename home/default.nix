@@ -6,6 +6,7 @@
     ./programs/xmobar.nix
     ./programs/xmonad.nix
     ./programs/firefox.nix
+    ./programs/alacritty.nix
   ];
   programs.home-manager.enable = true;
 
