@@ -58,7 +58,7 @@
   environment = {
     systemPackages = with pkgs; [
       gimp
-      haskellPackages.xmobar
+      haskellPackages.xmobar rofi
       spotify playerctl vlc
       firefox
       discord slack
