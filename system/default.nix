@@ -63,7 +63,7 @@
       firefox
       discord slack
       alacritty
-      git neovim
+      git neovim nodejs
       minecraft multimc
       ( pkgs.callPackage ../packages/games/lunar.nix {} )
     ];
