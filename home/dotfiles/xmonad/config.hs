@@ -28,16 +28,6 @@ import qualified Data.Map        as M
 --
 myTerminal = "alacritty"
 
--- The command to lock the screen or show the screensaver.
-myScreensaver = "/usr/bin/xscreensaver-command -l"
-
--- The command to take a selective screenshot, where you select
--- what you'd like to capture on the screen.
-mySelectScreenshot = "select-screenshot"
-
--- The command to take a fullscreen screenshot.
-myScreenshot = "screenshot"
-
 -- The command to use as a launcher, to launch commands that don't have
 -- preset keybindings.
 myLauncher = "rofi -show run"
@@ -68,10 +58,8 @@ myWorkspaces = ["1:code","2:term","3:web","4:media","5:games", "6:music" ] ++ ma
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Code"           --> doShift "1:code"
-    , className =? "Firefox"        --> doShift "3:web"
+    [ className =? "Firefox"        --> doShift "3:web"
     , className =? "discord"        --> doShift "4:media"
-    , className =? "Spotify"        --> doShift "6:music"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -141,67 +129,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return),
      spawn $ XMonad.terminal conf)
 
-  -- Lock the screen using command specified by myScreensaver.
-  , ((modMask .|. controlMask, xK_l),
-     spawn myScreensaver)
-
   -- Spawn the launcher using command specified by myLauncher.
   -- Use this to launch programs without a key binding.
   , ((modMask, xK_p),
      spawn myLauncher)
-
-  -- Take a selective screenshot using the command specified by mySelectScreenshot.
-  , ((modMask .|. shiftMask, xK_p),
-     spawn mySelectScreenshot)
-
-  -- Take a full screenshot using the command specified by myScreenshot.
-  , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn myScreenshot)
-
-  -- Mute volume.
-  , ((0, xF86XK_AudioMute),
-     spawn "amixer -q set Master toggle")
-
-  -- Decrease volume.
-  , ((0, xF86XK_AudioLowerVolume),
-     spawn "amixer -q set Master 5%-")
-
-  -- Increase volume.
-  , ((0, xF86XK_AudioRaiseVolume),
-     spawn "amixer -q set Master 5%+")
-
-  -- Mute volume.
-  , ((modMask .|. controlMask, xK_m),
-     spawn "amixer -q set Master toggle")
-
-  -- Decrease volume.
-  , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 5%-")
-
-  -- Increase volume.
-  , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 5%+")
-
-  -- Audio previous.
-  , ((0, 0x1008FF16),
-     spawn "")
-
-  -- Play/pause.
-  , ((0, 0x1008FF14),
-     spawn "")
-
-  -- Audio next.
-  , ((0, 0x1008FF17),
-     spawn "")
-
-  -- Eject CD tray.
-  , ((0, 0x1008FF2C),
-     spawn "eject -T")
-
-  -- Caps lock to ctrl
-  , ((0, xK_Caps_Lock),
-     spawn "xdotool key Control_L")
-
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
   --
