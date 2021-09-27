@@ -29,6 +29,10 @@
   };
 
   hardware.pulseaudio.enable = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 
   services = {
     gnome.gnome-keyring.enable = true;
@@ -57,10 +61,10 @@
 
   environment = {
     systemPackages = with pkgs; [
-      gimp
+      gimp obs-studio
       haskellPackages.xmobar rofi
       spotify playerctl vlc
-      firefox
+      firefox qutebrowser
       (pkgs.discord.overrideAttrs (old: rec {
         version = "0.0.16";
 	src = fetchurl {
@@ -71,7 +75,7 @@
       slack
       alacritty
       git neovim nodejs
-      minecraft multimc
+      minecraft multimc steam
       ( pkgs.callPackage ../packages/games/lunar.nix {} )
     ];
     interactiveShellInit = ''
