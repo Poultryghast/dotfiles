@@ -63,7 +63,7 @@
     systemPackages = with pkgs; [
       gimp obs-studio
       haskellPackages.xmobar rofi
-      spotify playerctl vlc
+      playerctl vlc
       firefox qutebrowser
       (pkgs.discord.overrideAttrs (old: rec {
         version = "0.0.16";
@@ -74,7 +74,7 @@
       }))
       slack
       alacritty
-      git neovim nodejs
+      git neovim nodejs glow
       minecraft multimc steam
       ( pkgs.callPackage ../packages/games/lunar.nix {} )
     ];
