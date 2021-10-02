@@ -118,7 +118,7 @@ myBorderWidth = 0
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask = mod1Mask
+myModMask = mod4Mask
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -126,7 +126,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   --
 
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
-  [ ((modMask .|. shiftMask, xK_Return),
+  [ ((modMask, xK_Return),
      spawn $ XMonad.terminal conf)
 
   -- Spawn the launcher using command specified by myLauncher.
@@ -138,7 +138,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   --
 
   -- Close focused window.
-  , ((modMask .|. shiftMask, xK_c),
+  , ((modMask, xK_c),
      kill)
 
   -- Cycle through the available layout algorithms.
@@ -170,7 +170,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      windows W.focusMaster  )
 
   -- Swap the focused window and the master window.
-  , ((modMask, xK_Return),
+  , ((modMask .|. shiftMask, xK_Return),
      windows W.swapMaster)
 
   -- Swap the focused window with the next window.
