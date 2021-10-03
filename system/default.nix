@@ -25,7 +25,7 @@
 
   users.users.henry = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "lp" ];
   };
 
   hardware.pulseaudio.enable = true;
@@ -61,6 +61,9 @@
 
   environment = {
     systemPackages = with pkgs; [
+      neofetch
+      system-config-printer
+      gnome.quadrapassel
       gimp obs-studio
       haskellPackages.xmobar rofi
       playerctl vlc
@@ -92,6 +95,7 @@
   };
 
   virtualisation.docker.enable = true;
-
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [ epson-escpr ];
   system.stateVersion = "21.05";
 }
