@@ -1,12 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = { self, nixpkgs, home-manager, ... } @inputs:
+  outputs = { self, nixpkgs, ... } @inputs:
   let
     system = "x86_64-linux";
     overlays = [
@@ -24,17 +20,7 @@
               config.allowUnfree = true;
             };
           }
-          ./system
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.henry = import ./home;
-              extraSpecialArgs = {
-                inherit inputs;
-              };
-            };
-          }
+          ./src/configuration.nix
         ];
       };
     };

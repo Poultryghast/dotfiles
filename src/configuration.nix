@@ -2,10 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-  ];
-
-  fonts.fonts = [
-    ( pkgs.callPackage ../packages/fonts/oldschool-pc.nix {} )
+    ./packages.nix
   ];
 
   # GRUB with a windows entry
@@ -60,29 +57,9 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      neofetch
-      system-config-printer
-      gnome.quadrapassel
-      gimp obs-studio
-      haskellPackages.xmobar rofi
-      playerctl vlc
-      firefox qutebrowser
-      (pkgs.discord.overrideAttrs (old: rec {
-        version = "0.0.16";
-	src = fetchurl {
-	  url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
-	  sha256 = "1s9qym58cjm8m8kg3zywvwai2i3adiq6sdayygk2zv72ry74ldai";
-	};
-      }))
-      slack
-      alacritty
-      git neovim nodejs glow
-      minecraft multimc steam
-      ( pkgs.callPackage ../packages/games/lunar.nix {} )
-    ];
     interactiveShellInit = ''
       alias music='cvlc /home/henry/songs'
+      alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
     '';
   };
 
@@ -95,7 +72,9 @@
   };
 
   virtualisation.docker.enable = true;
+
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [ epson-escpr ];
+
   system.stateVersion = "21.05";
 }
