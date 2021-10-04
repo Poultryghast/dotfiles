@@ -58,7 +58,7 @@
 
   environment = {
     interactiveShellInit = ''
-      alias music='cvlc /home/henry/songs'
+      alias music='cvlc $HOME/songs'
       alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
     '';
   };
