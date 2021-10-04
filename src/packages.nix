@@ -18,6 +18,7 @@
     slack
     alacritty
     git neovim nodejs glow
+    xorg.xmodmap
     minecraft multimc steam
     ( pkgs.callPackage ./lunar.nix {} )
   ];

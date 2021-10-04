@@ -46,7 +46,7 @@
       videoDrivers = [ "amdgpu" ];
 
       displayManager = {
-        gdm.enable = true;
+        lightdm.enable = true;
       };
 
       windowManager.xmonad = {
@@ -54,13 +54,6 @@
         enableContribAndExtras = true;
       };
     };
-  };
-
-  environment = {
-    interactiveShellInit = ''
-      alias music='cvlc $HOME/songs'
-      alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-    '';
   };
 
   nix = {
