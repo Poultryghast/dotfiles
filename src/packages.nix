@@ -20,6 +20,8 @@
     git neovim nodejs glow
     xorg.xmodmap
     minecraft multimc steam
+    SDL2 glxinfo glmark2
+    gcc cmake rustup cargo
     ( pkgs.callPackage ./lunar.nix {} )
   ];
 }
